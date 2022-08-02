@@ -22,11 +22,12 @@ type State = {
     images:image[]
 }
 function getimagesfromsrv (){
-    fetch('http://localhost:3000/images')
+    fetch('http://localhost:4000/images')
     .then(resp => resp.json())
     .then(imgfromsrv => {
-
+        console.log("yoo im dumb")
         state.images = imgfromsrv;
+        
     })
 
 }
@@ -80,4 +81,5 @@ sectioncontainer.append(articleel)
   }
  }
 getimagesfromsrv()
+console.log(state.images)
 render()
